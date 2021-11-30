@@ -1,0 +1,25 @@
+{
+  "name": "mocha_puppeteer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --config ./src/config/.mocharc.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olgatsylko/mocha_puppeteer.git"
+  },
+  "author": "Olga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olgatsylko/mocha_puppeteer/issues"
+  },
+  "homepage": "https://github.com/olgatsylko/mocha_puppeteer#readme",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "puppeteer": "^12.0.0"
+  }
+}
