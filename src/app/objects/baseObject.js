@@ -36,18 +36,19 @@ class BaseObject {
         return (await this.#ph.page.evaluate(element => element.textContent, element)).trim();
     }
 
-    async clickBy(elements, textOrPosition){
-        console.log("111111");
-        if (typeof textOrPosition === 'number') {
+    // async clickBy(elements, textOrPosition){
+    //     let arr = await this[elements];
+    //     let el = await arr.find(async function (elem) {
+    //         return (await this.getText(elem)) === textOrPosition;
+    //     })
+    //     await el.click();         
+    // }
+
+    async clickBy(elements, position){
+        if (typeof position === 'number') {
             let arr = await this[elements];
-            arr[textOrPosition].click();
-        // } else {
-        //     console.log("22222");
-        //     await this[elements].filter(async function (elem) {
-        //         return (await elem.getText()).trim() === textOrPosition;
-        //     }).click();
-            
-        }
+            await arr[position].click();
+        } 
     }
 }
 
