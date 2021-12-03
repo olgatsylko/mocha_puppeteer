@@ -1,6 +1,6 @@
 const ui = require ('../app/ui');
 
-describe('example spec', function () {
+describe('Left Menu', function () {
     beforeEach (async() => {
         await ui.ph.navigate();
     });
@@ -13,15 +13,13 @@ describe('example spec', function () {
         const text = await ui.header.getText('title');
         ui.expect(text).to.equal('Puppeteerv12.0.1Search:');
 
-        let mItems = [];
-        mItems = await ui.menu.menuItems;
+        let mItems = await ui.menu.menuItems;
        
         const ttl = await ui.menu.getText2(mItems[1]);
         ui.expect(ttl).to.equal('Release Notes');
-
+      
         await ui.menu.clickBy('menuItems', 1);
-        //await ui.ph.page.waitForTimeout(2000)
-    
+        
         let releaseNote = ui.factory.getPage('Release Notes');
         const rn = await releaseNote.getText('releaseHeader')
         ui.expect(rn).to.equal('Bug Fixes');

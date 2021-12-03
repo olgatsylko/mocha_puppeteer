@@ -1,6 +1,6 @@
 const Header = require ('./objects/controls/header');
 const LeftMenu = require ('./objects/controls/leftMenu');
-//const Search = require ('./objects/controls/search');
+const Search = require ('./objects/controls/search');
 const RightMenu = require ('./objects/controls/rightMenu');
 const chai = require ('chai');
 const BaseObject = require ('./objects/baseObject');
@@ -19,21 +19,12 @@ class Ui extends BaseObject{
     get factory() {
         return this.createGetter(PageFactory);
     }
-    // get search() {
-    //     return this.createGetter(Search);
-    // }
+    get search() {
+        return this.createGetter(Search);
+    }
     get rightMenu() {
         return this.createGetter(RightMenu);
     }
-
-    // get header() {
-    //     if (this.#currentObject.constructor === Header) {
-    //         return this.#currentObject;
-    //     }
-    //     this.#currentObject = new Header();
-    //     return this.#currentObject;
-    // }
-
 }
 
 module.exports = new Ui ();

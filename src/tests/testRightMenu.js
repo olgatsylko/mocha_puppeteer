@@ -1,6 +1,6 @@
 const ui = require ('../app/ui');
 
-describe('example spec', function () {
+describe('Right Menu', function () {
     beforeEach (async() => {
         await ui.ph.navigate();
     });
@@ -15,7 +15,7 @@ describe('example spec', function () {
             return resp.url() === 'https://github.com/puppeteer/puppeteer/security/overall-count' && resp.status() === 200;
         })
         ui.expect(await ui.ph.page.title()).to.include('troubleshooting');
-
+    
         await ui.ph.page.goBack();
 
         await ui.rightMenu.rightMenuItems;

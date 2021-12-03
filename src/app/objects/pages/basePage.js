@@ -1,14 +1,13 @@
 const BaseObject = require("../baseObject");
-const Search = require ('../controls/search');
 const ph = require ('../../pageHolder');
 
 class BasePage extends BaseObject{
     constructor(){
         super();
     }
-    get search() {
-        return this.createGetter(Search);
-    }
+   async whatPage(){
+       console.log(await this.ph.page.title());
+   }
 }
 
 module.exports = BasePage;

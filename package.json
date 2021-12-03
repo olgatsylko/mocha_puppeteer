@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --config ./src/config/.mocharc.js --require ./src/tests/hooks.js",
-    "report": "mocha ./src/tests/*.js --reporter mocha-simple-html-reporter --reporter-options output=report.html --timeout 7000 --require ./src/tests/hooks.js"
+    "report": "mocha ./src/tests/*.js --reporter mocha-simple-html-reporter --reporter-options output=report.html --timeout 10000 --require ./src/tests/hooks.js"
   },
   "repository": {
     "type": "git",

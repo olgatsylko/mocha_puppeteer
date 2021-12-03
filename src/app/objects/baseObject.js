@@ -1,4 +1,3 @@
-
 class BaseObject {
     #ph = require ('../pageHolder');
     #cache = {};
@@ -16,18 +15,6 @@ class BaseObject {
         return obj;
     }
 
-    // createGetter(Constructor) {
-    //     let obj = this.#pool.find((obj) =>{
-    //         return obj.constructor === Constructor
-    //     })
-    //     if (obj) {
-    //         return obj;
-    //     }
-    //     obj = new Constructor();
-    //     this.#pool.push(obj);
-    //     return obj;
-    // }
-
     async getText(element){
         return (await ((await this[element]).evaluate(node => node.innerText))).trim();
     }
@@ -35,14 +22,6 @@ class BaseObject {
     async getText2(element){
         return (await this.#ph.page.evaluate(element => element.textContent, element)).trim();
     }
-
-    // async clickBy(elements, textOrPosition){
-    //     let arr = await this[elements];
-    //     let el = await arr.find(async function (elem) {
-    //         return (await this.getText(elem)) === textOrPosition;
-    //     })
-    //     await el.click();         
-    // }
 
     async clickBy(elements, position){
         if (typeof position === 'number') {

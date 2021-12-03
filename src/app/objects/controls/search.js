@@ -8,9 +8,6 @@ class Search extends BaseObject {
     get searchContent() {
         return this.ph.page.$$('a[href*="elementhand"]');
     }
-    get searchInput() {
-        return this.ph.page.$('input[type=search]');  
-    }
     async searchText(text){
         const elementHandle = await this.ph.page.$('input[type=search]');
         await elementHandle.type(text, { delay: 100});
